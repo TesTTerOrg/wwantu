@@ -1,8 +1,8 @@
-# Why?
+# Wut?!
 We are looking for a new members for our team. So, in order to know you a little bit we have created a challenge.
 
-# The Challenge
-We are looking to a way that allows us to fetch our favorites movies from **omdbapi**, and mark them as favourites. Why? Why not!
+# Our challenge
+We are looking to a way that allows us to fetch our favorites movies from **omdbapi**, and mark them as favourites.
 
 ## Brief
 - The app must have a basic form with a "search field" and a button "search"
@@ -12,10 +12,10 @@ We are looking to a way that allows us to fetch our favorites movies from **omdb
  
 # The rules 👀
 - Fork this repository and create a PR
-- Use any framework and language as you want
-- You can use any kind of platform to deploy (if you want) i.e.: a vps, heroku, gcp, aws, etc.
-- You should give us a URL to view the result.
+- Use any framework and language as you want 
+- You can use any kind of platform to deploy (if you want) i.e.: heroku, gcp, aws, vps etc.
+- You should give us a URL to view the result (duh).
 
 
 # Time
-- You have 6 days as maximum but if you need more time, don't worry push your changes! is more important the quality than finish it.
+- You have 6 days as maximum but if you need more time, don't worry push your changes! is more important the quality.
