@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Tester App Challenge - Movie List</title>
-    
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection">
 </head>
 
 <body>
+    <nav>
+        <div class="nav-wrapper color-dark-secondary-bg">
+            <div class="container">
+                <a href="#!" class="brand-logo white-text">TESTER<span class="color-primary-text">MOVIES</span></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+                        class="material-icons color-light-text">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="color-light-text">Inicio</a></li>
+                    <li><a href="#" class="color-light-text">Mis Favoritas</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <ul class="sidenav color-dark-secondary-bg" id="mobile-demo">
+        <li class="white-text font-size-M font-weight-bold center">MEN&Uacute;</li>
+        <li class=""><a href="#" class="color-light-text font-size-M font-weight-light">Inicio</a></li>
+        <li><a href="#" class="color-light-text font-size-M font-weight-light">Mis Favoritas</a></li>
+    </ul>
 
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
 </body>
 
 </html>

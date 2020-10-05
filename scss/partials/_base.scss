@@ -1,0 +1,30 @@
+//Override Materialize
+.brand-logo {
+    font-family: "Segoe UI";
+    font-weight: bold;
+}
+
+.font-size-L {
+    font-size: $font-size-L !important;
+}
+
+.font-size-M {
+    font-size: $font-size-M !important;
+}
+
+.font-weight-normal {
+    font-weight: normal !important;
+}
+
+.font-weight-light {
+    font-weight: lighter !important;
+}
+
+.font-weight-bold {
+    font-weight: bold !important;
+}
+//Custom Styles
+
+body {
+    background-color: $color-dark;
+}
