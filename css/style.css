@@ -27,6 +27,13 @@
 body {
   background-color: #242936;
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .mt-xl {
@@ -39,6 +46,10 @@ body {
 
 .mt-m {
   margin-top: 2em;
+}
+
+.py-s {
+  padding: 1em 0;
 }
 
 .color-primary-bg {

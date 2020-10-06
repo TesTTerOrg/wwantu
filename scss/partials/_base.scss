@@ -23,18 +23,32 @@
 .font-weight-bold {
     font-weight: bold !important;
 }
+
 //Custom Styles
 body {
     background-color: $color-dark;
     font-family: $font-family-base;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.mt-xl{
+main {
+    flex: 1 0 auto;
+}
+
+.mt-xl {
     margin-top: $margin-xl;
 }
-.mt-l{
+
+.mt-l {
     margin-top: $margin-l;
 }
-.mt-m{
+
+.mt-m {
     margin-top: $margin-m;
+}
+
+.py-s{
+    padding: $padding-s 0;
 }
