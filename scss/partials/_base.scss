@@ -24,7 +24,6 @@
     font-weight: bold !important;
 }
 //Custom Styles
-
 body {
     background-color: $color-dark;
     font-family: $font-family-base;
@@ -32,4 +31,10 @@ body {
 
 .mt-xl{
     margin-top: $margin-xl;
+}
+.mt-l{
+    margin-top: $margin-l;
+}
+.mt-m{
+    margin-top: $margin-m;
 }
