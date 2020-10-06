@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- HEADER -->
     <nav>
         <div class="nav-wrapper color-dark-secondary-bg">
             <div class="container">
@@ -33,10 +34,26 @@
         <li class=""><a href="#" class="color-light-text font-size-M font-weight-light">Inicio</a></li>
         <li><a href="#" class="color-light-text font-size-M font-weight-light">Mis Favoritas</a></li>
     </ul>
+    <!-- END HEADER -->
 
+    <!-- MAIN -->
+    <div class="container mt-xl">
+        <div class="main-title color-light-text center">
+            <div class="main-title__sm left-align">¿QU&Eacute;</div>
+            <div class="main-title__l">PEL&Iacute;CULA</div>
+            <div class="main-title__sm right-align">BUSCAS?</div>
+        </div>
+    </div>
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
+    <!-- END FOOTER -->
+
+    <!-- SCRIPTS -->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script>
+        //Initialize elements
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);

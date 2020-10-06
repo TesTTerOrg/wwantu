@@ -26,6 +26,11 @@
 
 body {
   background-color: #242936;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mt-xl {
+  margin-top: 6em;
 }
 
 .color-primary-bg {
@@ -66,6 +71,21 @@ body {
 
 .color-dark-secondary-text {
   color: #313849 !important;
+}
+
+.main-title {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.main-title__sm {
+  font-size: 30px;
+  font-weight: lighter;
+}
+.main-title__l {
+  font-weight: bold;
+  font-size: 62px;
+  text-align: justify;
+  line-height: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

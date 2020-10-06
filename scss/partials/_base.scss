@@ -5,11 +5,11 @@
 }
 
 .font-size-L {
-    font-size: $font-size-L !important;
+    font-size: $font-size-l !important;
 }
 
 .font-size-M {
-    font-size: $font-size-M !important;
+    font-size: $font-size-m !important;
 }
 
 .font-weight-normal {
@@ -27,4 +27,9 @@
 
 body {
     background-color: $color-dark;
+    font-family: $font-family-base;
+}
+
+.mt-xl{
+    margin-top: $margin-xl;
 }
