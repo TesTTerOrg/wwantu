@@ -56,6 +56,10 @@ main {
   padding: 1em 0;
 }
 
+.bolder {
+  font-weight: bolder;
+}
+
 .color-primary-bg {
   background-color: #34c0e7 !important;
 }
