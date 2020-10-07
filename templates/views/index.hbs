@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tester App Challenge - Movie List</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection">
+</head>
+
+<body>
+    <!-- HEADER -->
+    {{>header}}
+
+    <!-- MAIN -->
+    <main class="container mt-xl">
+        <!-- SEARCH BAR -->
+        <div class="main-title color-light-text center">
+            <div class="main-title__sm left-align">¿QU&Eacute;</div>
+            <div class="main-title__l">PEL&Iacute;CULA</div>
+            <div class="main-title__sm right-align">BUSCAS?</div>
+        </div>
+
+        <div class="container mt-l">
+            <form action="" class="search-bar row">
+                <input type="text" class="search-bar__text-field col s10 color-dark-secondary-bg">
+                <a href="" class="search-bar__button col s2 white-text color-primary-bg"><i
+                        class="material-icons">search</i></a>
+            </form>
+        </div>
+        <!-- END SEARCH BAR -->
+    </main>
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
+    {{>footer}}
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script>
+        //Initialize elements
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+
+</html>

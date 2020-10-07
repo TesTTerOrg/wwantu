@@ -8,33 +8,13 @@
     <title>Tester App Challenge - Movie List</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection">
 </head>
 
 <body>
     <!-- HEADER -->
-    <nav>
-        <div class="nav-wrapper color-dark-secondary-bg">
-            <div class="container">
-                <a href="#!" class="brand-logo white-text">TESTER<span class="color-primary-text">MOVIES</span></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-                        class="material-icons color-light-text">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#" class="color-light-text">Inicio</a></li>
-                    <li><a href="#" class="color-light-text">Mis Favoritas</a></li>
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-
-    <ul class="sidenav color-dark-secondary-bg" id="mobile-demo">
-        <li class="white-text font-size-M font-weight-bold center">MEN&Uacute;</li>
-        <li class=""><a href="#" class="color-light-text font-size-M font-weight-light">Inicio</a></li>
-        <li><a href="#" class="color-light-text font-size-M font-weight-light">Mis Favoritas</a></li>
-    </ul>
-    <!-- END HEADER -->
+    {{>header}}
 
     <!-- MAIN -->
     <main class="container mt-m">
@@ -73,14 +53,10 @@
     <!-- END MAIN -->
 
     <!-- FOOTER -->
-    <footer class="center color-light-secondary-text py-s">
-        Desarrollado por Andr&eacute;s Navarro S.
-    </footer>
-    <!-- END FOOTER -->
+    {{>footer}}
 
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
     <script>
         //Initialize elements
         document.addEventListener('DOMContentLoaded', function () {
