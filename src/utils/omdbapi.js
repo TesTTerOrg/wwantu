@@ -1,8 +1,8 @@
 const request = require('request');
 
-const omdbapi = (search, callback) => {
+const omdbapi = (search, imdbID, callback) => {
     const apikey = "21f2e9a8";
-    const url = `http://www.omdbapi.com/?s=${search}&apikey=${apikey}`;
+    const url = `http://www.omdbapi.com/?s=${search}&i=${imdbID}&apikey=${apikey}`;
 
     request({
         url,
@@ -13,9 +13,13 @@ const omdbapi = (search, callback) => {
         } else if (response.body.Error) {
             callback('No se pudo encontrar la pelicula', undefined);
         } else {
-            callback(undefined, response.body.Search);
+            if(search){
+                callback(undefined, response.body.Search);
+            } else{
+                callback(undefined, response.body);
+            }
         }
-    })
+    });
 };
 
 module.exports = omdbapi;
