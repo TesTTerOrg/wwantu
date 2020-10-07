@@ -20,34 +20,31 @@
     <main class="container mt-m">
         <h5 class="color-light-text bolder">Mis Favoritas</h5>
 
-        <!-- RESULTS -->
-        <div class="row mt-m">
-            <div class="col s6 l3">
-                <div class="movie-card">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
-                        class="movie-card__image">
-                    <div class="movie-card__info">
-                        <p class="movie-card__info__name color-light-text">Nombre Película</p>
-                        <p class="movie-card__info__year color-light-secondary-text">2020</p>
-                    </div>
-                    <a href="#" class="movie-card__button white-text color-primary-bg added">Quitar de Favoritos</a>
-                </div>
-            </div>
+        <!-- FAVORITES -->
+        <% if (movies.length == 0){%>
+            <h6 class="color-light-text mt-m">Todav&iacute;a no has agregado ninguna pel&iacute;cula a tu lista de favoritas.</h6>
+            <% } else {%>
 
-            <div class="col s6 l3">
-                <div class="movie-card">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
-                        class="movie-card__image">
-                    <div class="movie-card__info">
-                        <p class="movie-card__info__name color-light-text">Nombre Película</p>
-                        <p class="movie-card__info__year color-light-secondary-text">2020</p>
+            <% for(let i=0; i<movies.length; i++){%>
+            <% if(i%4==0){ %>
+            <div class="row mt-m">
+                <% } %>
+                <div class="col s6 l3">
+                    <div class="movie-card">
+                        <img src="<%= movies[i].imageURL %>" class="movie-card__image">
+                        <div class="movie-card__info">
+                            <p class="movie-card__info__name color-light-text truncate"><%= movies[i].Title %></p>
+                            <p class="movie-card__info__year color-light-secondary-text"><%= movies[i].Year %></p>
+                        </div>
+                        <a href="/favorite?imdbID=<%= movies[i].imdbID %>" class="movie-card__button white-text color-primary-bg added">Quitar de Favoritos</a>
                     </div>
-                    <a href="" class="movie-card__button white-text color-primary-bg added">Quitar de Favoritos</a>
                 </div>
+                <% if((i+1)%4==0){ %>
             </div>
-        </div>
-
-        <!-- END RESULTS -->
+            <% } %>
+            <% } %>
+            <% } %>
+        <!-- END FAVORITES -->
 
     </main>
     <!-- END MAIN -->

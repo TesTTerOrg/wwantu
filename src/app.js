@@ -71,7 +71,7 @@ app.get("/favorite", (req, res) => {
             year: results.Year,
             imageURL: results.Poster
         });
-    
+
         movie.save().then(() => {
             res.send(movie);
         }).catch((e) => {
@@ -82,12 +82,13 @@ app.get("/favorite", (req, res) => {
 });
 
 app.get("/favorites", (req, res) => {
-    // Movie.find({}).then((movies) => {
-    //     res.send(movies);
-    // }).catch((e) => {
-    //     res.status(500).send();
-    // });
-    res.render("favorites");
+    Movie.find({}).then((movies) => {
+        res.render("favorites", {
+            movies
+        });
+    }).catch((e) => {
+        res.status(500).send();
+    });
 });
 
 app.get("*", (req, res) => {

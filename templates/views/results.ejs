@@ -31,6 +31,7 @@
         </div>
         <!-- END SEARCH BAR -->
 
+        <!-- RESULTS -->
         <% if (error !== undefined){%>
         <% if (search !== undefined){%>
         <h5 class="color-light-text center">No se encontraron resultados para "<%= search %>".</h5>
@@ -38,7 +39,6 @@
         <h5 class="color-light-text center"><%= error %></h5>
         <% } %>
         <% } else {%>
-        <!-- RESULTS -->
         <% for(let i=0; i<results.length; i++){%>
         <% if(i%4==0){ %>
         <div class="row mt-m">
@@ -58,8 +58,6 @@
         <% } %>
         <% } %>
         <% } %>
-
-
         <!-- END RESULTS -->
 
     </main>
