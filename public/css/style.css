@@ -178,4 +178,9 @@ main {
   background-color: #6488a1 !important;
 }
 
+footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=style.css.map */

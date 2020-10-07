@@ -4,8 +4,9 @@
   "description": "We are looking for a new members for our team. So, in order to know you a little bit we have created a challenge.",
   "main": "js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js -e js,hbs"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e js,hbs",
+    "sass": "sass --watch public/scss/style.scss public/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "hbs": "^4.1.1"
+    "hbs": "^4.1.1",
+    "request": "^2.88.2"
   }
 }
