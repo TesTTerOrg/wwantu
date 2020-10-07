@@ -53,7 +53,7 @@ app.get("/results", (req, res) => {
 
 app.get("/favorite", (req, res) => {
     if (!req.query.imdbID) {
-        return res.send("errorroror");
+        return res.status(500).send("Debe ingresar el ID de IMDB.");
     }
 
     omdbapi("", req.query.imdbID, (error, results) => {
@@ -73,7 +73,7 @@ app.get("/favorite", (req, res) => {
         });
 
         movie.save().then(() => {
-            res.send(movie);
+            res.redirect("back");
         }).catch((e) => {
             res.status(400).send(e);
         });
