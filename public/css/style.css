@@ -24,6 +24,14 @@
   font-weight: bold !important;
 }
 
+.toast.success {
+  background-color: #45B47D;
+}
+
+.toast.error {
+  background-color: #F44336;
+}
+
 body {
   background-color: #242936;
   font-family: "Open Sans", sans-serif;
@@ -78,6 +86,14 @@ main {
 
 .color-dark-secondary-bg {
   background-color: #313849 !important;
+}
+
+.color-success-bg {
+  background-color: #45B47D !important;
+}
+
+.color-error-bg {
+  background-color: #F44336 !important;
 }
 
 .color-primary-text {

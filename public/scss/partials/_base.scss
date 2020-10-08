@@ -24,6 +24,13 @@
     font-weight: bold !important;
 }
 
+.toast.success {
+    background-color: $color-success;
+}
+.toast.error {
+    background-color: $color-error;
+}
+
 //Custom Styles
 body {
     background-color: $color-dark;

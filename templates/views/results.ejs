@@ -15,7 +15,9 @@
 <body>
     <!-- HEADER -->
     <%- include("../partials/header.ejs") %>
-
+    <% if (fail){%>
+        <%= msg %>
+    <% } %>
     <!-- MAIN -->
     <main class="container mt-m">
         <!-- SEARCH BAR -->
@@ -30,7 +32,6 @@
             </form>
         </div>
         <!-- END SEARCH BAR -->
-
         <!-- RESULTS -->
         <% if (error !== undefined){%>
         <% if (search !== undefined){%>
@@ -38,7 +39,7 @@
         <% } else{ %>
         <h5 class="color-light-text center"><%= error %></h5>
         <% } %>
-        <% } else {%>
+        <% } else { %>
         <% for(let i=0; i<results.length; i++){%>
         <% if(i%4==0){ %>
         <div class="row mt-m">
@@ -50,7 +51,9 @@
                         <p class="movie-card__info__name color-light-text truncate"><%= results[i].Title %></p>
                         <p class="movie-card__info__year color-light-secondary-text"><%= results[i].Year %></p>
                     </div>
-                    <a href="/favorite?imdbID=<%= results[i].imdbID %>" class="movie-card__button white-text color-primary-bg">Agregar a Favoritos</a>
+                    <a href="/favorite?imdbID=<%= results[i].imdbID %>"
+                        class="movie-card__button white-text color-primary-bg">Agregar a Favoritos</a>
+                    <!-- <h1><%= results[i].added %></h1> -->
                 </div>
             </div>
             <% if((i+1)%4==0){ %>
@@ -68,7 +71,7 @@
 
     <!-- SCRIPTS -->
     <script type="text/javascript" src="/js/materialize.min.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/results-toast.js"></script>
     <script>
         //Initialize elements
         document.addEventListener('DOMContentLoaded', function () {

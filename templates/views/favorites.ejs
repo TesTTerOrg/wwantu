@@ -22,28 +22,30 @@
 
         <!-- FAVORITES -->
         <% if (movies.length == 0){%>
-            <h6 class="color-light-text mt-m">Todav&iacute;a no has agregado ninguna pel&iacute;cula a tu lista de favoritas.</h6>
-            <% } else {%>
+        <h6 class="color-light-text mt-m">Todav&iacute;a no has agregado ninguna pel&iacute;cula a tu lista de
+            favoritas.</h6>
+        <% } else {%>
 
-            <% for(let i=0; i<movies.length; i++){%>
-            <% if(i%4==0){ %>
-            <div class="row mt-m">
-                <% } %>
-                <div class="col s6 l3">
-                    <div class="movie-card">
-                        <img src="<%= movies[i].imageURL %>" class="movie-card__image">
-                        <div class="movie-card__info">
-                            <p class="movie-card__info__name color-light-text truncate"><%= movies[i].Title %></p>
-                            <p class="movie-card__info__year color-light-secondary-text"><%= movies[i].Year %></p>
-                        </div>
-                        <a href="/favorite?imdbID=<%= movies[i].imdbID %>" class="movie-card__button white-text color-primary-bg added">Quitar de Favoritos</a>
+        <% for(let i=0; i<movies.length; i++){%>
+        <% if(i%4==0){ %>
+        <div class="row mt-m">
+            <% } %>
+            <div class="col s6 l3">
+                <div class="movie-card">
+                    <img src="<%= movies[i].imageURL %>" class="movie-card__image">
+                    <div class="movie-card__info">
+                        <p class="movie-card__info__name color-light-text truncate"><%= movies[i].Title %></p>
+                        <p class="movie-card__info__year color-light-secondary-text"><%= movies[i].Year %></p>
                     </div>
+                    <a href="/remove?id=<%= movies[i]._id %>"
+                        class="movie-card__button white-text color-primary-bg added">Quitar de Favoritos</a>
                 </div>
-                <% if((i+1)%4==0){ %>
             </div>
-            <% } %>
-            <% } %>
-            <% } %>
+            <% if((i+1)%4==0){ %>
+        </div>
+        <% } %>
+        <% } %>
+        <% } %>
         <!-- END FAVORITES -->
 
     </main>
