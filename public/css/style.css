@@ -163,6 +163,7 @@ main {
 
 .movie-card {
   text-align: center;
+  margin-top: 2em;
 }
 .movie-card__image {
   max-width: 100%;
