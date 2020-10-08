@@ -32,7 +32,8 @@
             <% } %>
             <div class="col s6 l3">
                 <div class="movie-card">
-                    <img src="<%= movies[i].imageURL %>" class="movie-card__image">
+                    <% let url = movies[i].imageURL; if( url == "N/A") { url = "/img/no-image.jpg";} %>
+                    <img class="movie-card__image" src="<%= url %>">
                     <div class="movie-card__info">
                         <p class="movie-card__info__name color-light-text truncate"><%= movies[i].Title %></p>
                         <p class="movie-card__info__year color-light-secondary-text"><%= movies[i].Year %></p>

@@ -16,7 +16,7 @@
     <!-- HEADER -->
     <%- include("../partials/header.ejs") %>
     <% if (fail){%>
-        <%= msg %>
+    <%= msg %>
     <% } %>
     <!-- MAIN -->
     <main class="container mt-m">
@@ -46,7 +46,8 @@
             <% } %>
             <div class="col s6 l3">
                 <div class="movie-card">
-                    <img src="<%= results[i].Poster %>" class="movie-card__image">
+                    <% let url = results[i].Poster; if( url == "N/A") { url = "/img/no-image.jpg";} %>
+                    <img class="movie-card__image" src="<%= url %>">
                     <div class="movie-card__info">
                         <p class="movie-card__info__name color-light-text truncate"><%= results[i].Title %></p>
                         <p class="movie-card__info__year color-light-secondary-text"><%= results[i].Year %></p>
