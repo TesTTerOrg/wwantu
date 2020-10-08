@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tester App Challenge - Movie List</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include("../partials/header.ejs") %>
+    <% if (fail){%>
+    <%= msg %>
+    <% } %>
+    <!-- MAIN -->
+    <main class="container mt-m">
+        <!-- SEARCH BAR -->
+        <h6 class="white-text center">¿QU&Eacute; PEL&Iacute;CULA BUSCAS?</h6>
+        <div class="container mt-s">
+            <form action="/results" method="GET" class="search-bar row">
+                <input type="text" name="title" class="search-bar__text-field col s10 color-dark-secondary-bg"
+                    value="<%= search %>">
+                <a href="#" onclick="this.closest('form').submit();return false;"
+                    class="search-bar__button col s2 white-text color-primary-bg"><i
+                        class="material-icons">search</i></a>
+            </form>
+        </div>
+        <!-- END SEARCH BAR -->
+        <!-- RESULTS -->
+        <% if (error !== undefined){%>
+        <% if (search !== undefined){%>
+        <h5 class="color-light-text center">No se encontraron resultados para "<%= search %>".</h5>
+        <% } else{ %>
+        <h5 class="color-light-text center"><%= error %></h5>
+        <% } %>
+        <% } else { %>
+        <% for(let i=0; i<results.length; i++){%>
+        <% if(i%4==0){ %>
+        <div class="row mt-m">
+            <% } %>
+            <div class="col s6 l3">
+                <div class="movie-card">
+                    <% let url = results[i].Poster; if( url == "N/A") { url = "/img/no-image.jpg";} %>
+                    <img class="movie-card__image" src="<%= url %>">
+                    <div class="movie-card__info">
+                        <p class="movie-card__info__name color-light-text truncate"><%= results[i].Title %></p>
+                        <p class="movie-card__info__year color-light-secondary-text"><%= results[i].Year %></p>
+                    </div>
+                    <a href="/favorite?imdbID=<%= results[i].imdbID %>"
+                        class="movie-card__button white-text color-primary-bg">Agregar a Favoritos</a>
+                    <!-- <h1><%= results[i].added %></h1> -->
+                </div>
+            </div>
+            <% if((i+1)%4==0){ %>
+        </div>
+        <% } %>
+        <% } %>
+        <% } %>
+        <!-- END RESULTS -->
+
+    </main>
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer.ejs") %>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script src="/js/results-toast.js"></script>
+    <script>
+        //Initialize elements
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+
+</html>

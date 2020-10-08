@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tester App Challenge - Movie List</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include("../partials/header.ejs") %>
+
+    <!-- MAIN -->
+    <main class="container mt-m">
+        <!-- 404 Message -->
+        <div class="row mt-m">
+            <h5 class="color-light-text center">Página no encontrada.</h5>
+        </div>
+    </main>
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer.ejs") %>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script>
+        //Initialize elements
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+
+</html>

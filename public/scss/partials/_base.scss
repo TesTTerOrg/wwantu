@@ -1,0 +1,69 @@
+//Override Materialize
+.brand-logo {
+    font-family: "Segoe UI";
+    font-weight: bold;
+}
+
+.font-size-L {
+    font-size: $font-size-l !important;
+}
+
+.font-size-M {
+    font-size: $font-size-m !important;
+}
+
+.font-weight-normal {
+    font-weight: normal !important;
+}
+
+.font-weight-light {
+    font-weight: lighter !important;
+}
+
+.font-weight-bold {
+    font-weight: bold !important;
+}
+
+.toast.success {
+    background-color: $color-success;
+}
+.toast.error {
+    background-color: $color-error;
+}
+
+//Custom Styles
+body {
+    background-color: $color-dark;
+    font-family: $font-family-base;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.mt-xl {
+    margin-top: $margin-xl;
+}
+
+.mt-l {
+    margin-top: $margin-l;
+}
+
+.mt-m {
+    margin-top: $margin-m;
+}
+
+.mt-s {
+    margin-top: $margin-s;
+}
+
+.py-s{
+    padding: $padding-s 0;
+}
+
+.bolder {
+    font-weight: bolder;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tester App Challenge - Movie List</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include("../partials/header.ejs") %>
+
+    <!-- MAIN -->
+    <main class="container mt-m">
+        <h5 class="color-light-text bolder">Mis Favoritas</h5>
+
+        <!-- FAVORITES -->
+        <% if (movies.length == 0){%>
+        <h6 class="color-light-text mt-m">Todav&iacute;a no has agregado ninguna pel&iacute;cula a tu lista de
+            favoritas.</h6>
+        <% } else {%>
+
+        <% for(let i=0; i<movies.length; i++){%>
+        <% if(i%4==0){ %>
+        <div class="row mt-m">
+            <% } %>
+            <div class="col s6 l3">
+                <div class="movie-card">
+                    <% let url = movies[i].imageURL; if( url == "N/A") { url = "/img/no-image.jpg";} %>
+                    <img class="movie-card__image" src="<%= url %>">
+                    <div class="movie-card__info">
+                        <p class="movie-card__info__name color-light-text truncate"><%= movies[i].Title %></p>
+                        <p class="movie-card__info__year color-light-secondary-text"><%= movies[i].Year %></p>
+                    </div>
+                    <a href="/remove?id=<%= movies[i]._id %>"
+                        class="movie-card__button white-text color-primary-bg added">Quitar de Favoritos</a>
+                </div>
+            </div>
+            <% if((i+1)%4==0){ %>
+        </div>
+        <% } %>
+        <% } %>
+        <% } %>
+        <!-- END FAVORITES -->
+
+    </main>
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer.ejs") %>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script>
+        //Initialize elements
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+
+</html>
