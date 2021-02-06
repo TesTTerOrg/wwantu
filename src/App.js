@@ -13,7 +13,7 @@ function App() {
           <Route path="/favoritos">
             <Favourites />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/testter">
             <SearchPage />
           </Route>
         </Switch>
