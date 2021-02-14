@@ -1,0 +1,26 @@
+// Specific CSS for your home-page
+body {
+  background-color: black;
+}
+
+#movie-card{
+  color: white;
+  box-shadow: 1px solid whitesmoke;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(219, 219, 219);;
+}
+
+.letranav {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fa-film {
+  color: white;
+  font-size: 32px;
+}

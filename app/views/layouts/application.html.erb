@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OmdbSearch</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark">
+      <%= link_to "OMDB Movie´s Api", root_path, class: "navbar-brand letranav mx-3" %>
+      <i class="fas fa-film mx-3""></i>
+      <div>
+        <%= link_to "Favorites", favorites_path, class: "navbar-brand letranav mx-3" %>
+        <%= link_to "Search", root_path, class: "navbar-brand letranav mx-3" %>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
