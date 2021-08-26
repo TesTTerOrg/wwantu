@@ -22,4 +22,4 @@ We are looking for a way that allows us to fetch our favorite movies from **omdb
 
 # Time
 
-- You have up to 6 days to deliver the project, but if you need more time, don't worry, push your changes! quality is more important.
+- You have up to 6 days to submit the project, but if you need more time, don't worry, push your changes! quality is more important.
