@@ -16,7 +16,7 @@ We are looking for a way that allows us to fetch our favorite movies from **omdb
 # The rules 👀
 
 - Fork this repository and create a PR.
-- Use any framework and language you want.
+- Use any framework and programming language you want.
 - You can use any kind of platform to deploy (if you want) i.e.: heroku, gcp, aws, vps etc.
 - You must give us a URL to view the result (duh).
 
