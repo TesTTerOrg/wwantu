@@ -1,0 +1,16 @@
+<div class="my-5 border-2 border-slate-500">
+ <div>
+  <div>
+    <%= film["Title"] %>
+    <span> - <%= film["Year"] %></span>
+    <span>(<%= film["Type"] %>)</span>
+  </div>
+
+  <% if film["Poster"] != "N/A" %>
+    <%= image_tag(film["Poster"]) %>
+  <% else %>
+    <p>No Image</p>
+  <% end %>
+  
+ </div>
+</div>

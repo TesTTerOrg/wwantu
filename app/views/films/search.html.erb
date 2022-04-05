@@ -1,3 +1,7 @@
 <div class="mt-10">
-  <%= @film_list %>
+  <%= render "search_form" %>
+  
+  <% @film_list["Search"].each do |f| %>
+    <%= render "film_card", film: f  %>
+  <% end %>
 </div>

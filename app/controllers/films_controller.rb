@@ -6,7 +6,6 @@ class FilmsController < ApplicationController
     films = find_film(params[:title])
     
     unless films
-      flash[:alert] = "Film not found"
       return render action: :index
     end
     
@@ -16,12 +15,14 @@ class FilmsController < ApplicationController
   private
   def request_api(url)
     response = Excon.get(url)
+    parsed_response = JSON.parse(response.body)
     
-    if response.status != 200
+    if parsed_response['Response'] != 'True'
       return nil
+    else
+      parsed_response
     end
     
-    JSON.parse(response.body)
   end
   
   def find_film(title)
