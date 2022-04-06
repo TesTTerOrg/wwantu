@@ -8,8 +8,8 @@ class FilmsController < ApplicationController
   def search
     films = search_film_by_title(params[:title])
     
-    unless films
-      return render action: :index
+    if films.nil?
+      redirect_to root_path
     end
     
     @film_list = films
@@ -26,6 +26,8 @@ class FilmsController < ApplicationController
     else
       current_user.favs.create(user_id: current_user.id, imdb_id: params[:imdb])
     end
+
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy_fav
@@ -34,6 +36,8 @@ class FilmsController < ApplicationController
     else
       @fav.destroy
     end
+
+    redirect_back(fallback_location: root_path)
   end
   
   
@@ -51,7 +55,7 @@ class FilmsController < ApplicationController
     end
     
     def search_film_by_title(title)
-      request_api("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]}&s=#{URI.encode_www_form_component(title)}")
+      request_api("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]}&s=#{URI.encode_www_form_component(title)}&type=movie")
     end
 
     def search_film_by_imdb(imdb)

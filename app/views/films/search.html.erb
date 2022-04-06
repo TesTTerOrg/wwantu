@@ -1,7 +1,8 @@
-<div class="mt-10">
-  <%= render "search_form" %>
-  
-  <% @film_list["Search"].each do |f| %>
-    <%= render "film_card", film: f  %>
-  <% end %>
+<div class="mb-10">
+  <h1 class="text-4xl font-light m-0 mt-5"><%= @film_list["totalResults"] %> results for: <span class="font-extralight"><%= params[:title] %></span></h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <% @film_list["Search"].each do |f| %>
+      <%= render "film_card", film: f  %>
+    <% end %>
+  </div>
 </div>

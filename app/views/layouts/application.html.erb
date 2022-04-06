@@ -10,10 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="bg-blue-500 flex flex-row-reverse">
-      <%= link_to "My Favs", my_favs_path %>
-    </header>
-    <%= yield %>
+  <body class="h-screen flex justify-center">
+    <%= render "/films/navbar" %>
+    <div class="flex justify-center mt-10">
+      <%= yield %>
+    </div>
   </body>
 </html>

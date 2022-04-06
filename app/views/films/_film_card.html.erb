@@ -1,18 +1,23 @@
-<div class="my-5 border-2 border-slate-500">
- <div>
+<div class="flex flex-col my-5 border-2 border-slate-500 rounded-md max-w-sm min-h-96 justify-between">
   <div>
-    <%= film["Title"] %>
-    <span> - <%= film["Year"] %></span>
-    <span>(<%= film["Type"] %>)</span>
+    <div class="flex justify-center p-2 h-96">
+      <% if film["Poster"] != "N/A" %>
+        <%= image_tag(film["Poster"], class: "rounded-md shadow-md") %>
+      <% else %>
+      <div class="flex justify-center items-center bg-gray-300 p-10 w-3/4 rounded-md select-none">
+        <p class="text-gray-500 font-extralight text-2xl">No Image</p>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="text-center px-5 pb-2">
+      <span class="text-xl font-medium"><%= film["Title"] %></span>
+      <span> - <%= film["Year"] %></span>
+      <span>(<%= film["Type"] %>)</span>
+    </div>
   </div>
-
-  <% if film["Poster"] != "N/A" %>
-    <%= image_tag(film["Poster"]) %>
-  <% else %>
-    <p>No Image</p>
-  <% end %>
   
-  <%= render "like_action", film: film %>
-
- </div>
+  <div class="flex justify-center">
+    <%= render "like_action", film: film %>
+  </div>
 </div>

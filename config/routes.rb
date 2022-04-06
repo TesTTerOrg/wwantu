@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'films#index'
   devise_for :users
-  
+
+  root to: 'films#index'
+
   get '/search', to: 'films#search'
   get '/my_favs', to: 'films#fav_films', as: "my_favs"
 
