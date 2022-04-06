@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <% if current_user.favs.find { | f | f.imdb_id == film["imdbID"]} %>
+    <h5><%= button_to "Siguiendo a", unfav_path(film["imdbID"]), method: "POST", class: "px-2 rounded cursor-pointer transition easy-in-out bg-blue-300 hover:bg-red-300" %></h5>
+  <% else %>
+    <h5><%= button_to "Seguir a", fav_path(film["imdbID"]), method: "POST", class: "px-2 rounded cursor-pointer transition easy-in-out hover:bg-blue-300"  %></h5>
+  <% end%>
+<% else %>
+  <h5><%= button_to "Inicia Sesión", new_user_session_path, method: "GET", class: "px-2 rounded cursor-pointer transition easy-in-out bg-blue-300 hover:bg-red-300" %></h5>
+<% end %>
