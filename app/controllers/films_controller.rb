@@ -6,7 +6,7 @@ class FilmsController < ApplicationController
   end
   
   def search
-    films = search_film_by_title(params[:title])
+    films = search_film_by_title(params[:title], params[:page])
     
     if films.nil?
       redirect_to root_path
@@ -22,7 +22,7 @@ class FilmsController < ApplicationController
 
   def create_fav
     if already_fav?
-      flash[:notice] = "You can't like more than once"
+      redirect_back(fallback_location: root_path)
     else
       current_user.favs.create(user_id: current_user.id, imdb_id: params[:imdb])
     end
@@ -32,7 +32,7 @@ class FilmsController < ApplicationController
 
   def destroy_fav
     if not already_fav?
-      flash[:notice] = "Cannot unlike"
+      redirect_back(fallback_location: root_path)
     else
       @fav.destroy
     end
@@ -54,8 +54,8 @@ class FilmsController < ApplicationController
       
     end
     
-    def search_film_by_title(title)
-      request_api("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]}&s=#{URI.encode_www_form_component(title)}&type=movie")
+    def search_film_by_title(title, page = 1)
+      request_api("http://www.omdbapi.com/?apikey=#{ENV["OMDB_API_KEY"]}&type=movie&s=#{URI.encode_www_form_component(title)}&page=#{page}")
     end
 
     def search_film_by_imdb(imdb)
