@@ -1,4 +1,6 @@
-<%= form_tag(search_path, method: :get, local: true) do %>
-  <%= text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Eg. Pulp Fiction", class: "px-2 rounded-sm" %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="w-full">
+  <%= form_tag(search_path, method: :get, local: true) do %>
+    <%= text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Eg. Pulp Fiction", class: "px-2 rounded-sm" %>
+    <%= submit_tag "Search", class: "px-2 rounded-sm font-light cursor-pointer" %>
+  <% end %>
+</div>

@@ -1,15 +1,25 @@
 <div class="flex flex-col justify-center shadow-sm">
-  <div class="self-center pb-10">
-    <h1 class="text-6xl font-light text-gray-700">Search Movies</h1>
-    <p class="italic text-3xl font-light text-gray-400">and save your favorites ones.</p>
+  <div class="pb-10">
+
+    <div class="flex flex-row justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="hidden sm:block h-24 w-24 mr-2" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm3 2h6v4H7V5zm8 8v2h1v-2h-1zm-2-2H7v4h6v-4zm2 0h1V9h-1v2zm1-4V5h-1v2h1zM5 5v2H4V5h1zm0 4H4v2h1V9zm-1 4h1v2H4v-2z" clip-rule="evenodd" />
+      </svg>
+
+      <div class="flex flex-col justify-center">
+        <h1 class="text-4xl sm:text-6xl font-light text-gray-700">Search Movies</h1>
+        <p class="italic text-xl sm:text-3xl font-light text-gray-400">and save your favorites ones.</p>
+      </div>
+    </div>
+
   </div>
   
-  <div class="self-center">
-    <%= form_tag(search_path, method: :get, local: true) do %>
-      <%= text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Eg. Jurassic Park", class: "p-5 rounded-md w-96 bg-gray-50" %>
-      <%= submit_tag "Search", class: "px-10 py-5 rounded-md cursor-pointer hover:bg-blue-200 font-light" %>
-    <% end %>
-  </div>
+  <%= form_tag(search_path, method: :get, local: true) do %>
+    <div class="flex flex-col sm:flex-row m-5 gap-1">
+      <%= text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Eg. Jurassic Park", class: "p-5 rounded-md w-full sm:w-96 bg-gray-50" %>
+      <%= submit_tag "Search", class: "w-full sm:w-auto px-10 py-5 rounded-md cursor-pointer hover:bg-blue-200 font-light" %>
+    </div>
+  <% end %>
 
   <div class="self-center italic pt-3 font-extralight text-gray-500">
     <p>*create an account or sign in to save films.</p>
