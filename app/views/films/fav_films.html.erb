@@ -1,0 +1,15 @@
+<% if not @fav_films.nil? %>
+  <div class="container mb-10">
+    <h1 class="text-4xl font-light m-0 mt-5">Your Favorites Movies</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      <% @fav_films.each do |f| %>
+        <%= render "film_card", film: f  %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="flex flex-col w-full justify-center mb-10">
+    <p class="text-3xl select-none font-light">You don't have any favorite movie yet</p>
+    <p class="text-xl select-none font-light">Explore some films</p>
+  </div>
+<% end %>
