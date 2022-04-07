@@ -1,0 +1,23 @@
+<div class="flex flex-row justify-center items-center gap-4">
+  <% if params[:page].to_i > 1 %>
+    <%= link_to controller: "films", action: "search", :page => params[:page].to_i - 1, :title => params[:title] do %>
+      <button class="bg-black text-white p-2 px-5 rounded-md mx-5">back</button>
+    <% end %>
+
+    <%= link_to controller: "films", action: "search", :page => 1, :title => params[:title] do %>
+      <p class="text-gray-400 hover:text-black">1</p>
+    <% end %>
+  <% end %>
+  
+  <%= params[:page] %>
+
+  <% if params[:page].to_i < @pages %>
+    <%= link_to controller: "films", action: "search", :page => @pages, :title => params[:title] do %>
+      <p class="text-gray-400 hover:text-black"><%= @pages %></p>
+    <% end %>
+
+    <%= link_to controller: "films", action: "search", :page => params[:page].to_i + 1, :title => params[:title] do %>
+      <button class="bg-black text-white p-2 px-5 rounded-md mx-5">next</button>
+    <% end %>
+  <% end %>
+</div>
