@@ -1,8 +1,15 @@
 <div class="mb-10">
-  <h1 class="mx-5 md:mx-0 text-4xl font-light m-0 mt-5">Results for: <span class="font-extralight"><%= params[:title] %></span></h1>
+  <h1 class="mx-5 md:mx-0 text-4xl font-light m-0 mt-5"> <%= @film_list["totalResults"] %> results for: <span class="font-extralight"><%= params[:title] %></span></h1>
+  <div class="my-5">
+    <%= render "pagination" %>
+  </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     <% @film_list["Search"].each do |f| %>
       <%= render "film_card", film: f  %>
     <% end %>
+  </div>
+
+  <div class="pb-10">
+    <%= render "pagination" %>
   </div>
 </div>

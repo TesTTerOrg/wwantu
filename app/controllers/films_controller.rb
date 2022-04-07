@@ -6,12 +6,14 @@ class FilmsController < ApplicationController
   end
   
   def search
+    params[:page] = Integer(params[:page]) rescue 1
     films = search_film_by_title(params[:title], params[:page])
+    @pages = (films["totalResults"].to_f / 10).ceil rescue 0
     
     if films.nil?
       redirect_to root_path
     end
-    
+  
     @film_list = films
   end
 
@@ -22,22 +24,22 @@ class FilmsController < ApplicationController
 
   def create_fav
     if already_fav?
-      redirect_back(fallback_location: root_path)
+      back_redirection
     else
       current_user.favs.create(user_id: current_user.id, imdb_id: params[:imdb])
     end
 
-    redirect_back(fallback_location: root_path)
+    back_redirection
   end
 
   def destroy_fav
     if not already_fav?
-      redirect_back(fallback_location: root_path)
+      back_redirection
     else
       @fav.destroy
     end
 
-    redirect_back(fallback_location: root_path)
+    back_redirection
   end
   
   
@@ -75,5 +77,9 @@ class FilmsController < ApplicationController
 
     def find_fav
       @fav = current_user.favs.find_by_imdb_id(params[:imdb])
+    end
+
+    def back_redirection
+      redirect_back(fallback_location: root_path)
     end
 end
